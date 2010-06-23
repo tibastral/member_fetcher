@@ -1,0 +1,28 @@
+Member fetcher is a simple tool used to automate the fetching of a member in a controller class.
+
+You can now turn any class looking like that
+
+  class PagesController < ActionController::Base
+    before_filter :fetch_page
+
+    private
+    def fetch_page
+      if params[:id]
+        @page ||= Page.find(params[:id])
+      end
+    end
+
+    public
+    def show
+      #you can use here the @page instance variable
+    end
+  end
+
+
+to that, which is much cleaner :
+
+  class PagesController < ActionController::Base
+    def show
+      #you can use here the @page instance variable
+    end
+  end
