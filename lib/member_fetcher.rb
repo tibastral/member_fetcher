@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module MemberFetcher
   def self.included(base)
     base.before_filter :member_fetcher
